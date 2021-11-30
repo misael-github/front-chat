@@ -1,4 +1,5 @@
 import { Router } from "@vaadin/router"
+import { state } from "../../state"
 
 export class Home extends HTMLElement{
     connectedCallBack(){
@@ -8,6 +9,7 @@ export class Home extends HTMLElement{
           e.preventDefault
           const target = e.target as any
           console.log(target.nombre.value)
+          state.setNombre(target.nombre.value)
           Router.go("/chat")
         })
     }
