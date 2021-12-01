@@ -2,7 +2,7 @@ import { Router } from "@vaadin/router"
 import { state } from "../../state"
 
 export class Home extends HTMLElement{
-    connectedCallBack(){
+    connectedCallback(){
         this.render()
         const form = this.querySelector(".form")
         form.addEventListener("submit", (e) => {

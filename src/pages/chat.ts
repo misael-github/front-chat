@@ -4,7 +4,7 @@ type Message = {
     message:string
 }
 export class ChatPage extends HTMLElement{
-    connectedCallBack(){
+  connectedCallback(){
       state.suscribe(() => {
         const currentState = state.getState()
         this.messages = currentState.messages
