@@ -1,4 +1,4 @@
-import {state} from "../../state"
+import {state} from "../state"
 type Message = {
     from: string,
     message:string
@@ -7,7 +7,7 @@ export class ChatPage extends HTMLElement{
   connectedCallback(){
       state.suscribe(() => {
         const currentState = state.getState()
-        this.messages = currentState.messages
+        this.messages = currentState.messages // Pisamos el state con el nuevo valor
         this.render()
       })
         this.render()
@@ -24,17 +24,17 @@ export class ChatPage extends HTMLElement{
     }
     render(){
         this.innerHTML = `
-        <div>
-        <h1>Chat Page</h1>
+        <h1>Chatroom</h1>
+        <div class="container__content-mesages">
         <div class="messages">
         ${this.messages.map(m => {
           return `<div class="message">${m.from}: ${m.message} </div>` 
         })
         .join("")}
         </div>
-        <form class = "submit-message">
-        <input type= "text" name="new-message"/>
-        <button>Enviar</button>
+        <form class="submit-message form">
+        <input class="input" type= "text" name="new-message" placeholder="Mensaje"/>
+        <button class="button">Enviar</button>
         </form>
         </div>
         `

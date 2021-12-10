@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Slab:wght@600;700&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+.title{
+  display: block;
+  text-align: center;
+  font-size: 32px;
+  padding-top: 50px;
+}
+.container__text-field{
+    display: flex;
+    flex-direction: column;
+}
+.label{
+    margin-bottom: 10px;
+}
+.form, form{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    padding-top: 50px;
+    margin: auto;
+    width: 60%;
+    height: 200px;
+}
+.input, input {
+    justify-self: center;
+    padding: 15px;
+    border-radius: 3px;
+    border: solid 1px black;
+   
+}
+.button, button {
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(90, 50, 231);
+    color: white;
+    
+}
+.label{
+    color: coral;
+}

@@ -1,7 +1,7 @@
 
 const API_BASE_URL = "http://localhost:3000"
 import {dataBase} from "./realTimedb"
-import {map} from "lodash/map"
+import map from "lodash/map"
 
 
 const state = {
@@ -13,14 +13,13 @@ const state = {
   init(){
     // Lugar de la db donde están todos los mensajes
     const chatRoomsRef = dataBase.ref("/chatrooms/general"); // Hacemos referencia a una parte de la db
-    const currentState = this.getState()
-          chatRoomsRef.on("value", (snapshot) => {
-            // Escuchamos la referencia
-           const messageFromServer = snapshot.val()
-           const messagesList = map(messageFromServer.messages)
-           currentState.message = messagesList
+    const currentState = this.getState() // Obtengo el último estado de mi state
+          chatRoomsRef.on("value", (snapshot) => { // Escuchamos la referencia
+           const messagesFromServer = snapshot.val()
+           
+           const messagesList = map(messagesFromServer.messages)
+           currentState.messages = messagesList // Estos son los msj
             this.setState(currentState)
-           console.log(messagesList)
           });
      
   },
